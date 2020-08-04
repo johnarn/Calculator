@@ -2,9 +2,9 @@ package com.example.calculator.Model;
 
 public class CalculatorModel {
 
-    public Double calculate(String operand, Double firstNumber, Double secondNumber){
+    public Double calculate(String operand, Double firstNumber, Double secondNumber) {
 
-        if(operand == null || firstNumber == null || secondNumber == null){
+        if (operand == null || firstNumber == null || secondNumber == null) {
             return null;
         }
 
@@ -22,20 +22,20 @@ public class CalculatorModel {
 
     }
 
-    public Double add(Double firstNumber, Double secondNumber){
+    public Double add(Double firstNumber, Double secondNumber) {
         return firstNumber + secondNumber;
     }
 
-    public Double subtract(Double firstNumber, Double secondNumber){
+    public Double subtract(Double firstNumber, Double secondNumber) {
         return firstNumber - secondNumber;
     }
 
-    public Double multiply(Double firstNumber, Double secondNumber){
+    public Double multiply(Double firstNumber, Double secondNumber) {
         return firstNumber * secondNumber;
     }
 
-    public Double divide(Double firstNumber, Double secondNumber){
-        if(secondNumber == 0){
+    public Double divide(Double firstNumber, Double secondNumber) {
+        if (secondNumber == 0) {
             return null;
         }
         return firstNumber / secondNumber;

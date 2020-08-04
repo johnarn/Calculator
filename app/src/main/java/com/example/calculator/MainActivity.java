@@ -1,12 +1,13 @@
 package com.example.calculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.calculator.Model.CalculatorModel;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,4 +16,5 @@ public class MainActivity extends AppCompatActivity {
 
         CalculatorModel model = new CalculatorModel();
     }
+
 }
