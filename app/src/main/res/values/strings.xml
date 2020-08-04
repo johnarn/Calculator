@@ -20,5 +20,8 @@
     <string name="zero">0</string>
     <string name="dot">.</string>
     <string name="equal">=</string>
+    <string name="calculator">Calculator</string>
+    <string name="currency_converter">Currency Converter</string>
+    <string name="menu">Menu</string>
 
 </resources>

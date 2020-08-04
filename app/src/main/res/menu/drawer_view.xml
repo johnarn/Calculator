@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/iconHamburger"
+        app:showAsAction="ifRoom|withText"
+        android:icon="@mipmap/hamburger_foreground"
+        android:title="@string/menu">
+        <menu>
+            <item
+                android:id="@+id/menuItemCalculator"
+                android:title="@string/calculator" />
+            <item
+                android:id="@+id/menuItemConverter"
+                android:title="@string/currency_converter" />
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_first_fragment"
-            android:title="First" />
-        <item
-            android:id="@+id/nav_second_fragment"
-            android:title="Second" />
-        <item
-            android:id="@+id/nav_third_fragment"
-            android:title="Third" />
-    </group>
+        </menu>
+
+    </item>
 </menu>
