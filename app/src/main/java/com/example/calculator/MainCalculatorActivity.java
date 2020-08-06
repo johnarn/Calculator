@@ -4,20 +4,265 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.calculator.Model.CalculatorModel;
 
+import java.util.ArrayList;
+
+/**
+ * TODO
+ *  - Tests
+ *  - Make numbers bigger
+ *  - Numbers must be right and center of the edittext
+ *  - Find and delete the blue line between numpad and edittext
+ *  - Make percentage method at Model
+ */
+
 public class MainCalculatorActivity extends AppCompatActivity {
 
+    private Button btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine, btnZero;
+    private Button btnDelete, btnDoubleZero, btnDot, btnC;
+    private Button btnSum, btnSub, btnMult, btnDiv, btnPer, btnEqual;
+    private EditText editTextAnswer;
+    private CalculatorModel calculatorModel;
+    private ArrayList<String> expression = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_calculator);
-        CalculatorModel calculatorModel = new CalculatorModel();
+        calculatorModel = new CalculatorModel();
 
+        btnOne = findViewById(R.id.btnOne);
+        btnTwo = findViewById(R.id.btnTwo);
+        btnThree = findViewById(R.id.btnThree);
+        btnFour = findViewById(R.id.btnFour);
+        btnFive = findViewById(R.id.btnFive);
+        btnSix = findViewById(R.id.btnSix);
+        btnSeven = findViewById(R.id.btnSeven);
+        btnEight = findViewById(R.id.btnEight);
+        btnNine = findViewById(R.id.btnNine);
+        btnZero = findViewById(R.id.btnZero);
+        btnDoubleZero = findViewById(R.id.btnDoubleZero);
+        btnDot = findViewById(R.id.btnDot);
+        btnDelete = findViewById(R.id.btnDel);
+        btnC = findViewById(R.id.btnC);
+        btnSum = findViewById(R.id.btnSum);
+        btnSub = findViewById(R.id.btnSub);
+        btnMult = findViewById(R.id.btnMult);
+        btnDiv = findViewById(R.id.btnDiv);
+        btnEqual = findViewById(R.id.btnEqual);
+        btnPer = findViewById(R.id.btnPer);
+        editTextAnswer = findViewById(R.id.edittxtAnswer);
+        setListeners();
+
+        editTextAnswer.setFocusable(false);
+
+    }
+
+    private void setListeners() {
+
+        btnOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editTextAnswer.setText(editTextAnswer.getText() + "1");
+                expression.add("1");
+            }
+        });
+
+        btnTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editTextAnswer.setText(editTextAnswer.getText() + "2");
+                expression.add("2");
+            }
+        });
+
+        btnThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                editTextAnswer.setText(editTextAnswer.getText() + "3");
+                expression.add("3");
+            }
+        });
+
+        btnFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                editTextAnswer.setText(editTextAnswer.getText() + "4");
+                expression.add("4");
+            }
+        });
+
+        btnFive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                editTextAnswer.setText(editTextAnswer.getText() + "5");
+                expression.add("5");
+            }
+        });
+
+        btnSix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                editTextAnswer.setText(editTextAnswer.getText() + "6");
+                expression.add("6");
+            }
+        });
+
+        btnSeven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                editTextAnswer.setText(editTextAnswer.getText() + "7");
+                expression.add("7");
+            }
+        });
+
+        btnEight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editTextAnswer.setText(editTextAnswer.getText() + "8");
+                expression.add("8");
+            }
+        });
+
+        btnNine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                editTextAnswer.setText(editTextAnswer.getText() + "9");
+                expression.add("9");
+            }
+        });
+
+        btnZero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                editTextAnswer.setText(editTextAnswer.getText() + "0");
+                expression.add("0");
+            }
+        });
+
+        btnDoubleZero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                editTextAnswer.setText(editTextAnswer.getText() + "00");
+                expression.add("00");
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(expression.size()>0){
+                    expression.remove(expression.size()-1);
+                    editTextAnswer.setText(editTextAnswer.getText().subSequence(0, editTextAnswer.getText().length()-1));
+                }
+            }
+        });
+
+        btnDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(expression.size()>0){
+                    editTextAnswer.setText(editTextAnswer.getText() + ".");
+                    expression.add(".");
+                }
+
+
+            }
+        });
+
+        btnSum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(expression.size()>0){
+                    editTextAnswer.setText(editTextAnswer.getText() + "+");
+                    expression.add("+");
+                }
+
+            }
+        });
+
+        btnSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(expression.size()>0){
+                    editTextAnswer.setText(editTextAnswer.getText() + "-");
+                    expression.add("-");
+                }
+
+            }
+        });
+
+        btnMult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(expression.size()>0){
+                    editTextAnswer.setText(editTextAnswer.getText() + "*");
+                    expression.add("*");
+                }
+
+            }
+        });
+
+        btnDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(expression.size()>0){
+                    editTextAnswer.setText(editTextAnswer.getText() + "/");
+                    expression.add("/");
+                }
+
+            }
+        });
+
+        btnPer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(expression.size()>0){
+                    editTextAnswer.setText(editTextAnswer.getText() + "%");
+                    expression.add("%");
+                }
+
+            }
+        });
+
+        btnC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(expression.size()>0){
+                    editTextAnswer.setText("");
+                    expression.clear();
+                }
+
+            }
+        });
+
+        btnEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(expression.size()>0){
+                    editTextAnswer.setText(calculatorModel.findResult(expression));
+
+                }
+
+            }
+        });
     }
 
     @Override
