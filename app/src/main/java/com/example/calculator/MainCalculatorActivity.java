@@ -16,24 +16,38 @@ import java.util.ArrayList;
 
 /**
  * TODO
- *  - Tests
- *  - Make numbers bigger
- *  - Numbers must be right and center of the edittext
+ * - Tests
  */
 
 public class MainCalculatorActivity extends AppCompatActivity {
 
+    /**
+     * Views of Calculator
+     */
     private Button btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine, btnZero;
     private Button btnDelete, btnDoubleZero, btnDot, btnC;
     private Button btnSum, btnSub, btnMult, btnDiv, btnPer, btnEqual;
     private EditText editTextAnswer;
+
+    /**
+     * Model of Calculator
+     */
     private CalculatorModel calculatorModel;
+
+    /**
+     * The expression that user gives as input to edittext
+     */
     private ArrayList<String> expression = new ArrayList<>();
 
+    /**
+     * Initialize all the views and add them listeners
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_calculator);
+
+        //initialize Calculator Model
         calculatorModel = new CalculatorModel();
 
         btnOne = findViewById(R.id.btnOne);
@@ -59,10 +73,14 @@ public class MainCalculatorActivity extends AppCompatActivity {
         editTextAnswer = findViewById(R.id.edittxtAnswer);
         setListeners();
 
+        //remove cursor from edittext
         editTextAnswer.setFocusable(false);
-
     }
 
+    /**
+     * Create Listeners for all the buttons of the Calculator
+     * Each Listener updates the EditText for changes
+     */
     private void setListeners() {
 
         btnOne.setOnClickListener(new View.OnClickListener() {
@@ -164,9 +182,9 @@ public class MainCalculatorActivity extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(expression.size()>0){
-                    expression.remove(expression.size()-1);
-                    editTextAnswer.setText(editTextAnswer.getText().subSequence(0, editTextAnswer.getText().length()-1));
+                if (expression.size() > 0) {
+                    expression.remove(expression.size() - 1);
+                    editTextAnswer.setText(editTextAnswer.getText().subSequence(0, editTextAnswer.getText().length() - 1));
                 }
             }
         });
@@ -174,7 +192,7 @@ public class MainCalculatorActivity extends AppCompatActivity {
         btnDot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(expression.size()>0){
+                if (expression.size() > 0) {
                     editTextAnswer.setText(editTextAnswer.getText() + ".");
                     expression.add(".");
                 }
@@ -187,7 +205,7 @@ public class MainCalculatorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(expression.size()>0){
+                if (expression.size() > 0) {
                     editTextAnswer.setText(editTextAnswer.getText() + "+");
                     expression.add("+");
                 }
@@ -198,7 +216,7 @@ public class MainCalculatorActivity extends AppCompatActivity {
         btnSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(expression.size()>0){
+                if (expression.size() > 0) {
                     editTextAnswer.setText(editTextAnswer.getText() + "-");
                     expression.add("-");
                 }
@@ -209,7 +227,7 @@ public class MainCalculatorActivity extends AppCompatActivity {
         btnMult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(expression.size()>0){
+                if (expression.size() > 0) {
                     editTextAnswer.setText(editTextAnswer.getText() + "*");
                     expression.add("*");
                 }
@@ -220,7 +238,7 @@ public class MainCalculatorActivity extends AppCompatActivity {
         btnDiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(expression.size()>0){
+                if (expression.size() > 0) {
                     editTextAnswer.setText(editTextAnswer.getText() + "/");
                     expression.add("/");
                 }
@@ -231,7 +249,7 @@ public class MainCalculatorActivity extends AppCompatActivity {
         btnPer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(expression.size()>0){
+                if (expression.size() > 0) {
                     editTextAnswer.setText(editTextAnswer.getText() + "%");
                     expression.add("%");
                 }
@@ -242,7 +260,7 @@ public class MainCalculatorActivity extends AppCompatActivity {
         btnC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(expression.size()>0){
+                if (expression.size() > 0) {
                     editTextAnswer.setText("");
                     expression.clear();
                 }
@@ -254,7 +272,7 @@ public class MainCalculatorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(expression.size()>0){
+                if (expression.size() > 0) {
                     editTextAnswer.setText(calculatorModel.findResult(expression));
 
                 }
@@ -263,6 +281,9 @@ public class MainCalculatorActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Create the Hamburger icon at the ActionBar
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -270,16 +291,22 @@ public class MainCalculatorActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Start a new Activity from the option that the user has selected.
+     * Destroy the old activity so it can not be accessed.
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menuItemCalculator:
                 Intent calculatorIntent = new Intent(this, MainCalculatorActivity.class);
                 startActivity(calculatorIntent);
+                finish();
                 return true;
             case R.id.menuItemConverter:
                 Intent converterIntent = new Intent(this, MainConverterActivity.class);
                 startActivity(converterIntent);
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

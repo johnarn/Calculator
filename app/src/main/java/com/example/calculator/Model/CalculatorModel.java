@@ -3,9 +3,20 @@ package com.example.calculator.Model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * CalculatorModel contains all the business logic of the calculator app
+ */
 public class CalculatorModel {
 
-    public Double calculate(String operand, Double firstNumber, Double secondNumber) {
+    /**
+     * Calculate the result of the given expression
+     *
+     * @param operand      operand of the expression
+     * @param firstNumber  first operator of the expression
+     * @param secondNumber second operator of the expression
+     * @return the result of the expression
+     */
+    private Double calculate(String operand, Double firstNumber, Double secondNumber) {
 
         if (operand == null || firstNumber == null || secondNumber == null) {
             return null;
@@ -27,33 +38,50 @@ public class CalculatorModel {
 
     }
 
-    public Double add(Double firstNumber, Double secondNumber) {
+    /**
+     * Calculate the sum of two numbers
+     */
+    private Double add(Double firstNumber, Double secondNumber) {
         return firstNumber + secondNumber;
     }
 
-    public Double subtract(Double firstNumber, Double secondNumber) {
+    /**
+     * Calculate the difference of two numbers
+     */
+    private Double subtract(Double firstNumber, Double secondNumber) {
         return firstNumber - secondNumber;
     }
 
-    public Double multiply(Double firstNumber, Double secondNumber) {
+    /**
+     * Calculate the product of two numbers
+     */
+    private Double multiply(Double firstNumber, Double secondNumber) {
         return firstNumber * secondNumber;
     }
 
-    public Double divide(Double firstNumber, Double secondNumber) {
+    /**
+     * Calculate the quotient of two numbers
+     */
+    private Double divide(Double firstNumber, Double secondNumber) {
         if (secondNumber == 0) {
             return null;
         }
         return firstNumber / secondNumber;
     }
 
-    public double percentage(Double firstNumber) {
+    /**
+     * Calculate the percentage of a number
+     */
+    private double percentage(Double firstNumber) {
         return firstNumber / 100;
     }
 
-
+    /**
+     * Calculate the result of the whole expression of edittext
+     */
     public String findResult(ArrayList<String> expression) {
 
-
+        //First calculate the percentages, divisions and multiplications in the expression
         for (int i = 1; i < expression.size(); i++) {
             switch (expression.get(i)) {
                 case "%": {
@@ -71,16 +99,17 @@ public class CalculatorModel {
                     expression.set(i, calculate("*", Double.parseDouble(operands.get(0)), Double.parseDouble(operands.get(1))).toString());
                     break;
                 }
-                case ".":
+                case ".": {
                     expression.set(i, String.valueOf(Double.parseDouble(expression.get(i - 1)) + Double.parseDouble(expression.get(i + 1)) * 0.1 * expression.get(i + 1).length()));
                     expression.remove(i + 1);
                     expression.remove(i - 1);
                     i++;
                     break;
+                }
             }
-
         }
 
+        //Calculate the sums and the differences of the expression
         for (int i = 1; i < expression.size(); i++) {
             switch (expression.get(i)) {
                 case "+": {
@@ -94,17 +123,18 @@ public class CalculatorModel {
                     break;
                 }
             }
-
-
         }
-
         ArrayList<String> result = findOperands(expression, -1);
-
         return result.get(0);
     }
 
+    /**
+     * Find the two operands of a given expression
+     */
     private ArrayList<String> findOperands(ArrayList<String> expression, int operatorIndex) {
         ArrayList<String> operands = new ArrayList<>();
+
+        //If there is no operator return the operand
         if (operatorIndex == -1) {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < expression.size(); i++) {
@@ -115,6 +145,8 @@ public class CalculatorModel {
             operand.add(str);
             return operand;
         }
+
+        //Find the first and the second operand
         String firstNumber = "", secondNumber = "";
         for (int j = operatorIndex - 1; j >= 0; j--) {
             if (!expression.get(j).equals("+") && !expression.get(j).equals("-") && !expression.get(j).equals("*") && !expression.get(j).equals("/") && !expression.get(j).equals("%")) {
@@ -139,6 +171,4 @@ public class CalculatorModel {
 
 
     }
-
-
 }
