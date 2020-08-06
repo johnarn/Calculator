@@ -16,7 +16,6 @@ import com.example.calculator.R;
 import java.util.ArrayList;
 
 
-
 public class MainCalculatorActivity extends AppCompatActivity {
 
     /**
