@@ -15,10 +15,7 @@ import com.example.calculator.R;
 
 import java.util.ArrayList;
 
-/**
- * TODO
- * - Tests
- */
+
 
 public class MainCalculatorActivity extends AppCompatActivity {
 
