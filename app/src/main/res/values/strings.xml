@@ -23,5 +23,14 @@
     <string name="calculator">Calculator</string>
     <string name="currency_converter">Currency Converter</string>
     <string name="menu">Menu</string>
+    <string-array name="planets_array">
+        <item>USD</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>RUB</item>
+        <item>TRY</item>
+        <item>CZK</item>
+        <item>BTC</item>
+    </string-array>
 
 </resources>

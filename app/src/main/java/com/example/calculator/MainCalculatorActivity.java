@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.calculator.Model.CalculatorModel;
-import com.example.calculator.Model.ConverterModel;
 
 public class MainCalculatorActivity extends AppCompatActivity {
 
@@ -17,16 +16,10 @@ public class MainCalculatorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_calculator);
-
         CalculatorModel calculatorModel = new CalculatorModel();
-        ConverterModel converterModel = new ConverterModel();
-
-        System.out.println(converterModel.execute("USD", "EUR", "25"));
-
-
-
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -35,8 +28,8 @@ public class MainCalculatorActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.menuItemCalculator:
                 Intent calculatorIntent = new Intent(this, MainCalculatorActivity.class);
                 startActivity(calculatorIntent);
