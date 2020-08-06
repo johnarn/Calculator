@@ -23,6 +23,8 @@
     <string name="calculator">Calculator</string>
     <string name="currency_converter">Currency Converter</string>
     <string name="menu">Menu</string>
+    <string name="to">To</string>
+    <string name="convert">Convert</string>
     <string-array name="planets_array">
         <item>USD</item>
         <item>EUR</item>
