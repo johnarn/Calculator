@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.calculator.Controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.calculator.Model.CalculatorModel;
+import com.example.calculator.R;
 
 import java.util.ArrayList;
 

@@ -16,7 +16,7 @@ public class CalculatorModel {
      * @param secondNumber second operator of the expression
      * @return the result of the expression
      */
-    private Double calculate(String operand, Double firstNumber, Double secondNumber) {
+    public Double calculate(String operand, Double firstNumber, Double secondNumber) {
 
         if (operand == null || firstNumber == null || secondNumber == null) {
             return null;
@@ -41,28 +41,28 @@ public class CalculatorModel {
     /**
      * Calculate the sum of two numbers
      */
-    private Double add(Double firstNumber, Double secondNumber) {
+    public Double add(Double firstNumber, Double secondNumber) {
         return firstNumber + secondNumber;
     }
 
     /**
      * Calculate the difference of two numbers
      */
-    private Double subtract(Double firstNumber, Double secondNumber) {
+    public Double subtract(Double firstNumber, Double secondNumber) {
         return firstNumber - secondNumber;
     }
 
     /**
      * Calculate the product of two numbers
      */
-    private Double multiply(Double firstNumber, Double secondNumber) {
+    public Double multiply(Double firstNumber, Double secondNumber) {
         return firstNumber * secondNumber;
     }
 
     /**
      * Calculate the quotient of two numbers
      */
-    private Double divide(Double firstNumber, Double secondNumber) {
+    public Double divide(Double firstNumber, Double secondNumber) {
         if (secondNumber == 0) {
             return null;
         }
@@ -72,7 +72,7 @@ public class CalculatorModel {
     /**
      * Calculate the percentage of a number
      */
-    private double percentage(Double firstNumber) {
+    public Double percentage(Double firstNumber) {
         return firstNumber / 100;
     }
 

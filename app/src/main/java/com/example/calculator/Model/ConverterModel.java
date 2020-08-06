@@ -4,7 +4,7 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.calculator.MainConverterActivity;
+import com.example.calculator.Controller.MainConverterActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;

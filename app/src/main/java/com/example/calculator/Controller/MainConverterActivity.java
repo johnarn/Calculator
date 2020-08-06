@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.calculator.Controller;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -16,6 +16,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.calculator.Model.ConverterModel;
+import com.example.calculator.R;
 
 
 public class MainConverterActivity extends AppCompatActivity {
