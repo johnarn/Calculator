@@ -74,7 +74,7 @@ public class MainConverterActivity extends AppCompatActivity {
         fromSpinner = (Spinner) findViewById(R.id.fromSpinner);
         // Create an ArrayAdapter
         ArrayAdapter<CharSequence> fromAdapter = ArrayAdapter.createFromResource(this,
-                R.array.planets_array, android.R.layout.simple_spinner_item);
+                R.array.currency_array, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
         fromAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -82,7 +82,7 @@ public class MainConverterActivity extends AppCompatActivity {
 
         toSpinner = (Spinner) findViewById(R.id.toSpinner);
         ArrayAdapter<CharSequence> toAdapter = ArrayAdapter.createFromResource(this,
-                R.array.planets_array, android.R.layout.simple_spinner_item);
+                R.array.currency_array, android.R.layout.simple_spinner_item);
         toAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         toSpinner.setAdapter(toAdapter);
 

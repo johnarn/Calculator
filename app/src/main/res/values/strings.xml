@@ -25,7 +25,7 @@
     <string name="menu">Menu</string>
     <string name="to">To</string>
     <string name="convert">Convert</string>
-    <string-array name="planets_array">
+    <string-array name="currency_array">
         <item>USD</item>
         <item>EUR</item>
         <item>GBP</item>
