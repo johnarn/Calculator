@@ -13,7 +13,7 @@
         android:layout_height="0dp"
         android:textDirection="ltr"
         android:gravity="end"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:layout_weight="3"
         android:inputType="none"/>

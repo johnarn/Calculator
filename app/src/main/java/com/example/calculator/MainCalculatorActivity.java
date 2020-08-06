@@ -19,8 +19,6 @@ import java.util.ArrayList;
  *  - Tests
  *  - Make numbers bigger
  *  - Numbers must be right and center of the edittext
- *  - Find and delete the blue line between numpad and edittext
- *  - Make percentage method at Model
  */
 
 public class MainCalculatorActivity extends AppCompatActivity {
