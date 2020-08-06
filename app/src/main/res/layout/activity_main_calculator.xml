@@ -37,7 +37,7 @@
                 android:layout_weight="1"
                 android:background="@color/colorTransparent"
                 android:text="@string/c"
-                android:textColor="@color/colorOrange"
+                android:textColor="@color/colorOperands"
                 android:textSize="30sp" />
 
             <Button
@@ -46,7 +46,7 @@
                 android:layout_weight="1"
                 android:background="@color/colorTransparent"
                 android:text="@string/del"
-                android:textColor="@color/colorOrange"
+                android:textColor="@color/colorOperands"
                 android:textSize="30sp"
 
                 />
@@ -57,7 +57,7 @@
                 android:layout_weight="1"
                 android:background="@color/colorTransparent"
                 android:text="@string/percent"
-                android:textColor="@color/colorOrange"
+                android:textColor="@color/colorOperands"
                 android:textSize="30sp"
 
 
@@ -69,7 +69,7 @@
                 android:layout_weight="1"
                 android:background="@color/colorTransparent"
                 android:text="@string/divide"
-                android:textColor="@color/colorOrange"
+                android:textColor="@color/colorOperands"
                 android:textSize="30sp"
 
 
@@ -125,7 +125,7 @@
                 android:layout_weight="1"
                 android:background="@color/colorTransparent"
                 android:text="@string/multiply"
-                android:textColor="@color/colorOrange"
+                android:textColor="@color/colorOperands"
                 android:textSize="30sp"
 
 
@@ -181,7 +181,7 @@
                 android:layout_weight="1"
                 android:background="@color/colorTransparent"
                 android:text="@string/subtract"
-                android:textColor="@color/colorOrange"
+                android:textColor="@color/colorOperands"
                 android:textSize="30sp"
 
 
@@ -237,7 +237,7 @@
                 android:layout_weight="1"
                 android:background="@color/colorTransparent"
                 android:text="@string/addition"
-                android:textColor="@color/colorOrange"
+                android:textColor="@color/colorOperands"
                 android:textSize="30sp"
 
 
@@ -293,7 +293,7 @@
                 android:layout_weight="1"
                 android:background="@color/colorTransparent"
                 android:text="@string/equal"
-                android:textColor="@color/colorOrange"
+                android:textColor="@color/colorOperands"
                 android:textSize="30sp"
 
 

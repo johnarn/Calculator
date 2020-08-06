@@ -4,7 +4,6 @@ import android.view.View;
 
 import androidx.test.rule.ActivityTestRule;
 
-import com.example.calculator.Controller.MainCalculatorActivity;
 import com.example.calculator.Controller.MainConverterActivity;
 
 import org.junit.After;
@@ -16,30 +15,25 @@ import static org.junit.Assert.assertNotNull;
 
 public class ConverterInstrumentedTest {
 
+    @Rule
+    public ActivityTestRule<MainConverterActivity> mainConverterActivityTestRule = new ActivityTestRule<MainConverterActivity>(MainConverterActivity.class);
     private MainConverterActivity mainConverterActivity;
 
-    @Rule
-    public ActivityTestRule<MainConverterActivity> mainConverterActivityTestRule= new ActivityTestRule<MainConverterActivity>(MainConverterActivity.class);
-    
     @Before
-    public void setUp(){
-        mainConverterActivity= mainConverterActivityTestRule.getActivity();
+    public void setUp() {
+        mainConverterActivity = mainConverterActivityTestRule.getActivity();
     }
 
     @Test
-    public void testLaunch(){
+    public void testLaunch() {
         View view = mainConverterActivity.findViewById(R.id.btnConvert);
         assertNotNull(view);
     }
 
     @After
-    public void tearDown() throws Exception{
+    public void tearDown() throws Exception {
         mainConverterActivity = null;
     }
-
-
-
-
 
 
 }

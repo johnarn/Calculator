@@ -159,19 +159,22 @@ public class CalculatorModelUnitTest {
      * Test percentage method
      */
     @Test
-    public void percentagePositiveInteger(){
+    public void percentagePositiveInteger() {
         assertEquals(Double.valueOf(0.2), model.percentage(20.0));
     }
+
     @Test
-    public void percentageNegativeInteger(){
+    public void percentageNegativeInteger() {
         assertEquals(Double.valueOf(-0.2), model.percentage(-20.0));
     }
+
     @Test
-    public void percentageOneHundredPercent(){
+    public void percentageOneHundredPercent() {
         assertEquals(Double.valueOf(1.0), model.percentage(100.0));
     }
+
     @Test
-    public void percentageZeroPercent(){
+    public void percentageZeroPercent() {
         assertEquals(Double.valueOf(0), model.percentage(0.0));
     }
 
@@ -223,7 +226,7 @@ public class CalculatorModelUnitTest {
      */
 
     @Test
-    public void findResultTwoNumbersAddition(){
+    public void findResultTwoNumbersAddition() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("1");
         expression.add("+");
@@ -232,7 +235,7 @@ public class CalculatorModelUnitTest {
     }
 
     @Test
-    public void findResultTwoBiggerNumbersAddition(){
+    public void findResultTwoBiggerNumbersAddition() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("10");
         expression.add("+");
@@ -241,7 +244,7 @@ public class CalculatorModelUnitTest {
     }
 
     @Test
-    public void findResultTwoNumbersSubtraction(){
+    public void findResultTwoNumbersSubtraction() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("1");
         expression.add("-");
@@ -250,7 +253,7 @@ public class CalculatorModelUnitTest {
     }
 
     @Test
-    public void findResultTwoBiggerNumbersSubtraction(){
+    public void findResultTwoBiggerNumbersSubtraction() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("10");
         expression.add("-");
@@ -259,7 +262,7 @@ public class CalculatorModelUnitTest {
     }
 
     @Test
-    public void findResultTwoNumbersDivision(){
+    public void findResultTwoNumbersDivision() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("1");
         expression.add("/");
@@ -268,7 +271,7 @@ public class CalculatorModelUnitTest {
     }
 
     @Test
-    public void findResultTwoBiggerNumbersDivision(){
+    public void findResultTwoBiggerNumbersDivision() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("110");
         expression.add("/");
@@ -276,8 +279,8 @@ public class CalculatorModelUnitTest {
         assertEquals(String.valueOf(11.0), model.findResult(expression));
     }
 
-    @Test(expected=NullPointerException.class)
-    public void findResultZeroDivision(){
+    @Test(expected = NullPointerException.class)
+    public void findResultZeroDivision() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("110");
         expression.add("/");
@@ -286,7 +289,7 @@ public class CalculatorModelUnitTest {
     }
 
     @Test
-    public void findResultDifferentSignDivision(){
+    public void findResultDifferentSignDivision() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("110");
         expression.add("/");
@@ -295,7 +298,7 @@ public class CalculatorModelUnitTest {
     }
 
     @Test
-    public void findResultSameSignMult(){
+    public void findResultSameSignMult() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("10");
         expression.add("*");
@@ -304,7 +307,7 @@ public class CalculatorModelUnitTest {
     }
 
     @Test
-    public void findResultDifferentSignMult(){
+    public void findResultDifferentSignMult() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("10");
         expression.add("*");
@@ -313,7 +316,7 @@ public class CalculatorModelUnitTest {
     }
 
     @Test
-    public void findResultDoubleNumbersMult(){
+    public void findResultDoubleNumbersMult() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("0.3");
         expression.add("*");
@@ -322,7 +325,7 @@ public class CalculatorModelUnitTest {
     }
 
     @Test
-    public void findResultIntegerNumberPercentage(){
+    public void findResultIntegerNumberPercentage() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("3");
         expression.add("%");
@@ -330,7 +333,7 @@ public class CalculatorModelUnitTest {
     }
 
     @Test
-    public void findResultNegativeIntegerNumberPercentage(){
+    public void findResultNegativeIntegerNumberPercentage() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("-3");
         expression.add("%");
@@ -338,15 +341,13 @@ public class CalculatorModelUnitTest {
     }
 
     @Test
-    public void findResultPositiveNumberDot(){
+    public void findResultPositiveNumberDot() {
         ArrayList<String> expression = new ArrayList<>();
         expression.add("3");
         expression.add(".");
         expression.add("2");
         assertEquals(String.valueOf(3.2), model.findResult(expression));
     }
-
-
 
 
 }
