@@ -45,7 +45,7 @@ public class MainConverterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_convertor);
+        setContentView(R.layout.activity_main_converter);
 
         //Initialize the spinners list
         initializeSpinners();
